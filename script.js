@@ -1,18 +1,16 @@
-// script.js
-let cart = [];
-function addToCart(product, price) {
-    cart.push({ product, price });
-    updateCart();
-}
-function updateCart() {
-    let cartList = document.getElementById('cart');
-    let total = document.getElementById('total');
-    cartList.innerHTML = '';
-    let sum = 0;
-    cart.forEach(item => {
-        let li = document.createElement('li');
-        li.textContent = `${item.product} - ${item.price} Kč`;
-        cartList.appendChild(li);
-        sum += item.price;
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script načten!");
+
+    const buttons = document.querySelectorAll(".add-to-cart");
+    const cart = document.getElementById("cart");
+    const cartItems = document.getElementById("cart-items");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const productName = this.getAttribute("data-product");
+            const li = document.createElement("li");
+            li.textContent = productName;
+            cartItems.appendChild(li);
+        });
     });
-    total.textContent = `Celková cena: ${sum} Kč`;
+});
