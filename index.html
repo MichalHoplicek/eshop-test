@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Můj e-shop</title>
+    <title>Testovací e-shop</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://www.paypal.com/sdk/js?client-id=AZe1f6Pii1nA3f-Ry9GzgEK475AtdHWcZPx-5qgUyZL8HbaU52HK_XAPGza__9ny6JqCOH2HtOQcWrfW&currency=CZK"></script>
 </head>
 <body>
-    <h1>Vítejte v mém e-shopu!</h1>
+    <h1>Vítejte v mém testovacím e-shopu!</h1>
 
-    <div class="produkt">
-        <img src="jezevcik.jpg" alt="Jezevčík">
-        <h2>Produkt 1: Jezevčík</h2>
-        <p>Cena: <strong>10 Kč</strong></p>
-        <button onclick="pridatDoKosiku('Jezevčík', 10)">Přidat do košíku</button>
+    <div class="products">
+        <div class="product">
+            <img src="jezevcik.jpg" alt="Jezevčík">
+            <h2>Produkt 1 - Jezevčík</h2>
+            <p>Cena: 500 Kč</p>
+            <button onclick="addToCart('Jezevčík', 500)">Přidat do košíku</button>
+        </div>
+        <div class="product">
+            <img src="bmw.jpg" alt="BMW">
+            <h2>Produkt 2 - BMW</h2>
+            <p>Cena: 800 000 Kč</p>
+            <button onclick="addToCart('BMW', 800000)">Přidat do košíku</button>
+        </div>
     </div>
 
-    <div class="produkt">
-        <img src="bmw.jpg" alt="BMW">
-        <h2>Produkt 2: BMW</h2>
-        <p>Cena: <strong>1 000 000 Kč</strong></p>
-        <button onclick="pridatDoKosiku('BMW', 1000000)">Přidat do košíku</button>
-    </div>
+    <h2>Košík</h2>
+    <ul id="cart"></ul>
+    <h3 id="totalPrice">Celková cena: 0 Kč</h3>
 
-    <div id="kosik">
-        <h2>Košík</h2>
-        <ul id="kosik-seznam"></ul>
-        <p><strong>Celková cena: <span id="celkova-cena">0</span> Kč</strong></p>
-        <div id="paypal-button-container"></div>
-    </div>
+    <!-- PayPal tlačítko -->
+    <div id="paypal-button-container"></div>
 
+    <script src="https://www.paypal.com/sdk/js?client-id=AZe1f6Pii1nA3f-Ry9GzgEK475AtdHWcZPx-5qgUyZL8HbaU52HK_XAPGza__9ny6JqCOH2HtOQcWrfW&currency=CZK"></script>
     <script src="script.js"></script>
 </body>
 </html>
