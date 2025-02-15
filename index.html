@@ -1,2 +1,29 @@
-<link rel="stylesheet" href="styles.css?v=2">
-<script src="script.js" defer></script>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Můj testovací e-shop</title>
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+    <h1>Vítejte v mém testovacím e-shopu!</h1>
+    <div class="product">
+        <img src="jezevcik.jpg" alt="Jezevčík">
+        <h2>Produkt 1</h2>
+        <p>Cena: 500 Kč</p>
+        <button onclick="addToCart('Produkt 1', 500)">Přidat do košíku</button>
+    </div>
+    <div class="product">
+        <img src="bmw.jpg" alt="BMW">
+        <h2>Produkt 2</h2>
+        <p>Cena: 1 000 000 Kč</p>
+        <button onclick="addToCart('Produkt 2', 1000000)">Přidat do košíku</button>
+    </div>
+    <h2>Košík</h2>
+    <ul id="cart"></ul>
+    <button onclick="checkout()">Objednat</button>
+
+    <script src="script.js?v=2"></script>
+</body>
+</html>
