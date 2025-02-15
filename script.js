@@ -1,16 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script načten!");
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
 
-    const buttons = document.querySelectorAll(".add-to-cart");
-    const cart = document.getElementById("cart");
-    const cartItems = document.getElementById("cart-items");
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    background-color: white;
+}
 
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            const productName = this.getAttribute("data-product");
-            const li = document.createElement("li");
-            li.textContent = productName;
-            cartItems.appendChild(li);
-        });
-    });
-});
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
