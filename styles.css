@@ -10,6 +10,14 @@ body {
     margin: 10px;
     display: inline-block;
     background-color: white;
+    width: 300px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
 }
 
 button {
@@ -23,3 +31,4 @@ button {
 button:hover {
     background-color: #218838;
 }
+
