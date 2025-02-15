@@ -1,25 +1,30 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script načten!");
+});
+
+let cart = [];
+
+function addToCart(product, price) {
+    cart.push({ product, price });
+    updateCart();
 }
 
-.product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    display: inline-block;
-    background-color: white;
+function updateCart() {
+    const cartList = document.getElementById("cart");
+    cartList.innerHTML = "";
+    cart.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = `${item.product} - ${item.price} Kč`;
+        cartList.appendChild(li);
+    });
 }
 
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
+function checkout() {
+    if (cart.length === 0) {
+        alert("Košík je prázdný!");
+        return;
+    }
+    alert("Objednávka odeslána!");
+    cart = [];
+    updateCart();
 }
