@@ -3,40 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Můj e-shop</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Testovací e-shop</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <h1>Vítejte v mém testovacím e-shopu!</h1>
-    
+
     <div class="products">
         <div class="product">
-            <img src="jezevcik.jpg" alt="Produkt 1 - Jezevčík">
+            <img src="jezevcik.jpg" alt="Jezevčík">
             <h2>Produkt 1 - Jezevčík</h2>
             <p>Cena: 10 Kč</p>
-            <button class="add-to-cart">Přidat do košíku</button>
+            <button onclick="addToCart('Jezevčík', 10)">Přidat do košíku</button>
         </div>
-
         <div class="product">
-            <img src="bmw.jpg" alt="Produkt 2 - BMW">
+            <img src="bmw.jpg" alt="BMW">
             <h2>Produkt 2 - BMW</h2>
             <p>Cena: 800 000 Kč</p>
-            <button class="add-to-cart">Přidat do košíku</button>
+            <button onclick="addToCart('BMW', 800000)">Přidat do košíku</button>
         </div>
     </div>
 
     <h2>Košík</h2>
-    <div class="cart">
-        <ul id="cart-items"></ul>
-        <p id="total-price">Celková cena: 0 Kč</p>
+    <div class="cart-container">
+        <ul id="cart"></ul>
+        <h3 id="totalPrice">Celková cena: 0 Kč</h3>
     </div>
 
-    <div class="paypal-buttons">
-        <button class="paypal">PayPal</button>
-        <button class="credit-card">Debetní nebo kreditní karta</button>
+    <div class="paypal-wrapper">
+        <div id="paypal-button-container"></div>
     </div>
 
+    <script src="https://www.paypal.com/sdk/js?client-id=AWBQYJonjHTLls3809UDxZ7ZQ2PMIeu4NkwOR_Z1p_gc72EofXMn54cBDJXIXtJ9elUo-fjwi2rgzbIt&currency=CZK"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
