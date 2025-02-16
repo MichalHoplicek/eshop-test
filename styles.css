@@ -2,33 +2,57 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
+/* Kontejner pro produkty */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Styl produktu */
 .product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
     display: inline-block;
     background-color: white;
     width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Obrázky produktů */
 .product img {
     width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
+/* Styl tlačítka */
 button {
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 15px;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
 }
 
 button:hover {
     background-color: #218838;
 }
-
