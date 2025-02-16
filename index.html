@@ -7,32 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Vítejte v mém testovacím e-shopu!</h1>
+    <div class="container">
+        <h1>Vítejte v mém testovacím e-shopu!</h1>
 
-    <div class="products">
-        <div class="product">
-            <img src="jezevcik.jpg" alt="Jezevčík">
-            <h2>Produkt 1 - Jezevčík</h2>
-            <p>Cena: 10 Kč</p>
-            <button onclick="addToCart('Jezevčík', 10)">Přidat do košíku</button>
+        <div class="products">
+            <div class="product">
+                <img src="jezevcik.jpg" alt="Jezevčík">
+                <h2>Produkt 1 - Jezevčík</h2>
+                <p>Cena: 10 Kč</p>
+                <button onclick="addToCart('Jezevčík', 10)">Přidat do košíku</button>
+            </div>
+            <div class="product">
+                <img src="bmw.jpg" alt="BMW">
+                <h2>Produkt 2 - BMW</h2>
+                <p>Cena: 800 000 Kč</p>
+                <button onclick="addToCart('BMW', 800000)">Přidat do košíku</button>
+            </div>
         </div>
-        <div class="product">
-            <img src="bmw.jpg" alt="BMW">
-            <h2>Produkt 2 - BMW</h2>
-            <p>Cena: 800 000 Kč</p>
-            <button onclick="addToCart('BMW', 800000)">Přidat do košíku</button>
+
+        <h2>Košík</h2>
+        <div class="cart-container">
+            <ul id="cart"></ul>
+            <h3 id="totalPrice">Celková cena: 0 Kč</h3>
         </div>
+
+        <!-- PayPal tlačítko -->
+        <div id="paypal-button-container"></div>
     </div>
 
-    <h2>Košík</h2>
-    <ul id="cart"></ul>
-    <h3 id="totalPrice">Celková cena: 0 Kč</h3>
-
-    <!-- PayPal tlačítko -->
-    <div id="paypal-button-container"></div>
-
+    <!-- PayPal SDK -->
     <script src="https://www.paypal.com/sdk/js?client-id=AWBQYJonjHTLls3809UDxZ7ZQ2PMIeu4NkwOR_Z1p_gc72EofXMn54cBDJXIXtJ9elUo-fjwi2rgzbIt&currency=CZK"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
