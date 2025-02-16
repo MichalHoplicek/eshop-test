@@ -27,11 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         totalPrice.textContent = `Celková cena: ${total} Kč`;
-
-        // Animace při přidání do košíku
-        totalPrice.classList.add("highlight");
-        setTimeout(() => {
-            totalPrice.classList.remove("highlight");
-        }, 500);
     }
 });
