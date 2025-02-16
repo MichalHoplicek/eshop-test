@@ -5,6 +5,7 @@ let totalPrice = 0;
 function addToCart(product, price) {
     cart.push({ product, price });
     totalPrice += price;
+    totalPrice = parseFloat(totalPrice.toFixed(2)); // Zaokrouhlení na 2 desetinná místa
     updateCart();
 }
 
@@ -12,18 +13,22 @@ function addToCart(product, price) {
 function updateCart() {
     let cartList = document.getElementById("cart");
     let totalPriceElement = document.getElementById("totalPrice");
+    let paypalContainer = document.getElementById("paypal-button-container");
     
     cartList.innerHTML = "";
     cart.forEach(item => {
         let li = document.createElement("li");
-        li.innerText = `${item.product} - ${item.price} Kč`;
+        li.innerText = `${item.product} - ${item.price.toFixed(2)} Kč`;
         cartList.appendChild(li);
     });
 
-    totalPriceElement.innerText = `Celková cena: ${totalPrice} Kč`;
+    totalPriceElement.innerText = `Celková cena: ${totalPrice.toFixed(2)} Kč`;
 
-    // Zobrazit PayPal tlačítko
-    if (totalPrice > 0) {
+    // Odstranění předchozího PayPal tlačítka (pokud existuje)
+    paypalContainer.innerHTML = "";
+
+    // Zobrazit PayPal tlačítko, pokud je něco v košíku
+    if (cart.length > 0) {
         renderPayPalButton();
     }
 }
@@ -34,7 +39,7 @@ function renderPayPalButton() {
         createOrder: function(data, actions) {
             return actions.order.create({
                 purchase_units: [{
-                    amount: { value: totalPrice.toString(), currency_code: "CZK" }
+                    amount: { value: totalPrice.toFixed(2), currency_code: "CZK" }
                 }]
             });
         },
