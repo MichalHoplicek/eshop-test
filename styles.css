@@ -93,7 +93,9 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Přesunutí PayPal tlačítka hned pod košík */
+/* Zarovnání PayPal tlačítka na střed */
 #paypal-button-container {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
