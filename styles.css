@@ -36,13 +36,13 @@ body {
     transform: scale(1.05);
 }
 
-/* Obrázky produktů */
+/* Oprava obrázků – zajistí, že se zobrazí celé */
 .product img {
     width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
+    height: 200px; /* Fixní výška pro konzistenci */
+    object-fit: contain; /* Zajistí, že celý obrázek bude vidět */
     border-radius: 5px;
+    background-color: #fff; /* Bílé pozadí, pokud je obrázek menší */
 }
 
 /* Tlačítka */
@@ -91,4 +91,9 @@ button:hover {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
+}
+
+/* Přesunutí PayPal tlačítka hned pod košík */
+#paypal-button-container {
+    margin-top: 20px;
 }
