@@ -7,21 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <h1>Vítejte v mém testovacím e-shopu!</h1>
-
+    
+    <div class="filters">
+        <label for="priceFilter">Filtrovat podle ceny:</label>
+        <select id="priceFilter" onchange="filterProducts()">
+            <option value="all">Vše</option>
+            <option value="low">Levné (&lt; 100 Kč)</option>
+            <option value="high">Drahé (&ge; 100 Kč)</option>
+        </select>
+    </div>
+    
     <div class="products">
-        <div class="product">
+        <div class="product" data-price="10">
             <img src="jezevcik.jpg" alt="Jezevčík">
             <h2>Produkt 1 - Jezevčík</h2>
             <p>Cena: 10 Kč</p>
-            <button onclick="addToCart('Jezevčík', 10)">Přidat do košíku</button>
+            <button onclick="addToCart('Jezevčík', 10, event)">Přidat do košíku</button>
         </div>
-        <div class="product">
+        <div class="product" data-price="800000">
             <img src="bmw.jpg" alt="BMW">
             <h2>Produkt 2 - BMW</h2>
             <p>Cena: 800 000 Kč</p>
-            <button onclick="addToCart('BMW', 800000)">Přidat do košíku</button>
+            <button onclick="addToCart('BMW', 800000, event)">Přidat do košíku</button>
         </div>
     </div>
 
