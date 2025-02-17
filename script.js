@@ -37,11 +37,9 @@ function animateFlyToCart(button) {
     let productImage = product.querySelector("img");
     let cartIcon = document.querySelector(".cart-container");
 
-    // Klonování obrázku
     let flyingImage = productImage.cloneNode(true);
     document.body.appendChild(flyingImage);
 
-    // Nastavení stylu
     let rect = productImage.getBoundingClientRect();
     flyingImage.style.position = "absolute";
     flyingImage.style.left = rect.left + "px";
@@ -50,14 +48,12 @@ function animateFlyToCart(button) {
     flyingImage.style.height = productImage.height + "px";
     flyingImage.classList.add("fly-to-cart");
 
-    // Konečná pozice (u košíku)
     let cartRect = cartIcon.getBoundingClientRect();
     setTimeout(() => {
         flyingImage.style.transform = `translate(${cartRect.left - rect.left}px, ${cartRect.top - rect.top}px) scale(0)`;
         flyingImage.style.opacity = "0";
     }, 100);
 
-    // Odstranění po animaci
     setTimeout(() => {
         flyingImage.remove();
     }, 800);
@@ -82,4 +78,21 @@ function renderPayPalButton() {
             });
         }
     }).render('#paypal-button-container');
+}
+
+// Filtr produktů podle ceny
+function filterProducts() {
+    let filter = document.getElementById("priceFilter").value;
+    let products = document.querySelectorAll(".product");
+    
+    products.forEach(product => {
+        let price = parseInt(product.getAttribute("data-price"));
+        if (filter === "low" && price >= 100) {
+            product.style.display = "none";
+        } else if (filter === "high" && price < 100) {
+            product.style.display = "none";
+        } else {
+            product.style.display = "block";
+        }
+    });
 }
